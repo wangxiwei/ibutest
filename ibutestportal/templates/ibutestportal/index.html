@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if apilist %}
+    <ul>
+    {% for api in apilist %}
+        <li>{{ api.request_name }}</li>
+        <li><input type="url" value="{{ api.request_url }}" size="100" ></li>
+        <li><textarea rows="30" cols="80">{{ api.request_content }}</textarea>  <textarea rows="30" cols="80">{{ api.response_content }}</textarea></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+</body>
+</html>

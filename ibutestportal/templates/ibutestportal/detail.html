@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="{% url 'api:save_detail' object.id %}" method="post">
+    {% csrf_token %}
+    <li><input type="text" name="api_name" value="{{ object.request_name }}" size="100" ></li>
+    <br>
+    <li><input type="url" name="api_url" value="{{ object.request_url }}" size="100" ></li>
+    <br>
+    <li><textarea name="api_request" rows="30" cols="80">{{ object.request_content }}</textarea>
+        <textarea name="api_response" rows="30" cols="80">{{ object.response_content }}</textarea></li>
+    <input type="submit" value="保存">
+</form>
+
+
+
+</body>
+</html>
